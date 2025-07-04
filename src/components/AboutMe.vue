@@ -1,136 +1,160 @@
 <template>
   <section
-    class="flex flex-col mx-auto w-screen min-h-screen items-center md:items-center justify-center max-w-7xl"
+    class="w-screen bg-white flex justify-center min-h-screen items-center relative bg-subtle"
   >
     <div
-      class="flex flex-col w-full p-12 md:text-left space-x-5 items-center z-10 bg-red-100"
+      class="flex flex-col w-full items-center z-10 md:max-w-7xl px-10 md:py-0 py-10 md:px4 mx-10 md:mx-0"
     >
-      <div class="flex flex-row">
-        <div class="w-[60%]">
-          <img
-            src="../assets/images/RyankReal.png"
-            alt="ProfileReal"
-            class="items-center"
-          />
-        </div>
-        <div
-          class="flex flex-col p-2 h-full md:p-5 space-y-5 justify-center items-center"
+      <!-- Title Section -->
+      <div class="flex flex-col items-center text-center">
+        <p class="font-poppins text-4xl text-gray-900 font-bold mb-2">
+          About Me
+        </p>
+        <br />
+        <p class="text-gray-900 text-lg font-poppins break-words">
+          I'm a programmer with a strong creative side, always striving to blend
+          technical skills with design. I focus on developing software that not
+          only functions well but also delivers a visually appealing and
+          intuitive experience—especially in Visual Programming, UI Design,
+          Product Design, and Prototyping. Additionally, I have a passion for
+          illustration, which further enriches my perspective in creating
+          aesthetic and functional designs. Beyond technology, music is also a
+          significant part of my life. I play the guitar, and music deeply
+          influences the way I approach creativity and expression.
+        </p>
+        <br />
+        <button
+          class="text-white rounded-lg font-semibold tracking-[0.3em] bg-gradient-to-r from-sky-400 to-indigo-500 shadow-md hover:shadow-xl p-3 mt-4 transition duration-300 ease-in-out transform hover:scale-105 hover:from-indigo-400 hover:to-sky-500"
         >
-          <p
-            class="font-poppins text-4xl text-gray-900 font-bold mb-2 self-center font"
-          >
-            About Me
-          </p>
-          <p class="text-gray-900 text-lg font-poppins text-center">
-            I'm a programmer with a strong creative side, so I'm always looking
-            to bring together technical skill and design. I focus on building
-            software that doesn't just work well but also looks and feels
-            right—whether it's in UI/UX design, branding, or product
-            prototyping. Besides programming, I'm also into music; I play
-            guitar, and music really shapes how I think about creativity and
-            expression.
-          </p>
-          <button
-            class="text-slate-100 rounded-lg font-semibold text-1xl bg-slate-500 shadow-lg flex flex-row hover:bg-slate-900 p-2 justify-center items-center mt-4 transition duration-300 ease-in-out transform hover:scale-105"
-          >
-            <IconFile3d class="w-8 h-8 mr-2 size-5" color="white" />
-            DOWNLOAD CV
-          </button>
-        </div>
+          DOWNLOAD CV
+        </button>
       </div>
 
-      <br />
-      <br />
-      <div class="flex flex-col">
-        <h4 class="text-yellow-600 font-serif">Expertise</h4>
-        <div class="leading-tight text-4xl font-serif font-semibold">
-          Programming Visual, Design UI, Design Product, Design Prototyping,
-          Illustration
+      <div
+        class="flex flex-col md:flex-row w-full space-x-0 md:space-x-10 justify-center pt-16 md:pt-16"
+      >
+        <div class="flex flex-col w-full">
+          <h4
+            class="text-yellow-500 font-serif tracking-[0.2em] text-xl font-bold mb-4"
+          >
+            EXPERIENCE
+          </h4>
+
+          <ul
+            class="w-full custom-list list-disc text-gray-900 font-poppins gap-6 text-lg font-semibold break-words"
+          >
+            <li
+              v-for="(project, index) in projects"
+              :key="index"
+              class="font-poppins font-semibold"
+            >
+              <p class="block text-black text-2xl font-semibold mt-5 md:mt-10">
+                {{ project.name }}
+                <span class="block text-gray-800 text-xl">
+                  {{ project.position }}
+                </span>
+                <span class="block text-gray-600 text-lg">
+                  {{ project.date }}
+                </span>
+              </p>
+              <br />
+              <p class="text-gray-900 font-poppins text-lg font-normal mt-1">
+                {{ project.description }}
+              </p>
+            </li>
+          </ul>
         </div>
         <br />
-        <div class="flex flex-grow">
-          <div class="flex flex-col">
-            <h4 class="text-white font-serif tracking-[0.2em] text-xl">
-              EXPERIENCE
-            </h4>
+        <br />
+        <div class="flex flex-col w-full">
+          <h4
+            class="text-yellow-500 font-serif tracking-[0.2em] text-xl font-bold mb-4"
+          >
+            EDUCATION
+          </h4>
 
-            <br />
-            <ul>
-              <li class="font-poppins font-semibold list-disc">
-                <p
-                  class="flex-col block text-black font-poppins text-lg font-semibold"
-                >
-                  Varash Group
-                  <span class="block text-gray-800 text-"
-                    >Mobile App Developer
-                  </span>
-                  <span class="block">September 2020 - Present</span>
-                </p>
-
-                <br />
-                <p class="text-gray-900 font-poppins text-sm font-normal">
-                  Description of project 1
-                </p>
-              </li>
-
-              <li class="text-gray-900 font-poppins text-lg font-semibold">
-                <a href="https://example.com/project2" target="_blank"
-                  >Project 2</a
-                >
-                <p class="text-gray-900 font-poppins text-sm font-normal">
-                  Description of project 2
-                </p>
-              </li>
-            </ul>
-          </div>
+          <ul
+            class="w-full custom-list list-disc grid grid-cols-1 sm:grid-cols-1 gap-6 text-gray-900 font-poppins text-lg font-semibold break-words"
+          >
+            <li
+              v-for="(education, index) in educations"
+              :key="index"
+              class="font-poppins font-semibold"
+            >
+              <p class="block text-black text-2xl font-semibold mt-5 md:mt-10">
+                {{ education.name }}
+                <span class="block text-gray-800 text-xl">
+                  {{ education.position }}
+                </span>
+                <span class="block text-gray-600 text-lg">
+                  {{ education.date }}
+                </span>
+              </p>
+              <br />
+              <p class="text-gray-900 font-poppins text-lg font-normal mt-1">
+                {{ education.description }}
+              </p>
+            </li>
+          </ul>
         </div>
+
+        <!-- Ended Space -->
       </div>
     </div>
   </section>
 </template>
 
 <script>
-import { IconFile3d } from "@tabler/icons-vue";
-
 export default {
   name: "AboutMe",
-  components: {
-    IconFile3d,
-  },
-  setup() {},
   data() {
-    const skills = [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "Vue.js",
-      "React",
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-      "Git",
-      "Figma",
-    ];
-
     const projects = [
       {
-        name: "Project 1",
-        description: "Description of project 1",
-        link: "https://example.com/project1",
+        name: "Varash Group",
+        position: "Mobile Developer Hybrid",
+        description:
+          "Serving as mobile app staf with a focus on developing mobile applications for Android and iOS.",
+        date: "September 2020 - Present",
       },
       {
-        name: "Project 2",
-        description: "Description of project 2",
-        link: "https://example.com/project2",
+        name: "PT Global Lintas Solusi",
+        position: "Mobile Developer Hybrid",
+        description:
+          "Make applications for Android and iOS using react native, focusing on user experience and performance optimization.",
+        date: "January 2019 - August 2020",
+      },
+    ];
+
+    const educations = [
+      {
+        name: "ITB Stikom Bali",
+        position: "Bachelor's Degree in Information Systems",
+        description:
+          "Completed a comprehensive program emphasizing programming, software development, and systems analysis. Developed core skills in web and mobile application development, collaborating on projects to build functional, user-friendly solutions. Gained experience in databases, UI/UX principles, and team-based project work.",
+        date: "2018 - 2021",
       },
     ];
 
     return {
-      skills,
       projects,
+      educations,
     };
   },
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped>
+.custom-list {
+  list-style-type: disc;
+}
+
+.custom-list li {
+  position: relative;
+  margin-right: 20px;
+}
+
+.custom-list li::marker {
+  color: #ff6347;
+  font-size: 1.8rem;
+}
+</style>

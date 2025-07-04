@@ -30,7 +30,9 @@
       class="flex flex-col items-center md:items-start w-full max-w-7xl justify-start text-center md:text-left z-10"
     >
       <div class="p-10">
-        <h4 class="text-yellow-600 font-['Playfair_Display']">Hello World!</h4>
+        <h4 class="text-yellow-600 font-serif tracking-[0.2em]">
+          - Hello World!
+        </h4>
         <div
           class="text-gray-700 leading-tight text-5xl sm:text-6xl md:text-7xl font-['Playfair_Display']"
         >
@@ -53,20 +55,20 @@
       <!-- Biography and Image -->
 
       <div
-        class="flex flex-row p-6 md:p-12 rounded-lg space-x-5 align-middle justify-center shadow-lg bg-white"
+        class="flex flex-col md:flex-row rounded-lg shadow-lg md:bg-white items-center md:p-10 p-0"
       >
         <img
-          src="../assets/images/profilepng.png"
-          alt="Profile"
-          class="rounded-full w-40 h-40 md:w-64 md:h-64 border-4 border-white object-cover bg-slate-500 items-center"
+          src="../assets/images/my-cartoon.png"
+          alt="ProfileReal"
+          class="rounded-full md:w-60 md:h-60 w-[200px] h-[200px] size-24 bg-black object-cover object-[center_10%] mt-10"
         />
 
         <div
-          class="flex flex-col p-6 rounded-lg w-1/2 font-serif text-gray-900"
+          class="flex flex-col rounded-lg font-serif text-gray-900 md:pl-10 p-8"
         >
           <h1 class="text-4xl text-gray-900 font-bold">Biography</h1>
           <br />
-          <p>
+          <p class="align-text-top">
             I am a developer focused on mobile and web experiences. I am
             passionate about creating beautiful and functional applications that
             provide value to users. I have experience working with a variety of
@@ -77,19 +79,61 @@
           </p>
         </div>
 
-        <div class="flex flex-col flex-grow p-6 items-end">
+        <div class="flex flex-col p-0 md:p6">
           <h1 class="text-2xl text-gray-900 font-sans font-bold">
             Let's Connect
           </h1>
           <br />
           <div class="flex flex-row flex-wrap gap-2">
-            <IconBrandInstagram name="instagram" color="black" size="25" />
-            <IconBrandFacebook name="facebook" color="black" size="25" />
-            <IconBrandGithub name="github" color="black" size="25" />
-            <IconBrandLinkedin name="linkedin" color="black" size="25" />
-            <IconBrandTwitter name="twitter" color="black" size="25" />
+            <span class="group transition-transform hover:scale-125">
+              <IconBrandInstagram
+                name="instagram"
+                :color="hovered === 'instagram' ? '#E1306C' : 'black'"
+                size="25"
+                @mouseenter="hovered = 'instagram'"
+                @mouseleave="hovered = ''"
+              />
+            </span>
+            <span class="group transition-transform hover:scale-125">
+              <IconBrandFacebook
+                name="facebook"
+                :color="hovered === 'facebook' ? '#1877F3' : 'black'"
+                size="25"
+                @mouseenter="hovered = 'facebook'"
+                @mouseleave="hovered = ''"
+              />
+            </span>
+            <span class="group transition-transform hover:scale-125">
+              <IconBrandGithub
+                name="github"
+                :color="hovered === 'github' ? '#6e5494' : 'black'"
+                size="25"
+                @mouseenter="hovered = 'github'"
+                @mouseleave="hovered = ''"
+              />
+            </span>
+            <span class="group transition-transform hover:scale-125">
+              <IconBrandLinkedin
+                name="linkedin"
+                :color="hovered === 'linkedin' ? '#0A66C2' : 'black'"
+                size="25"
+                @mouseenter="hovered = 'linkedin'"
+                @mouseleave="hovered = ''"
+              />
+            </span>
+            <span class="group transition-transform hover:scale-125">
+              <IconBrandTwitter
+                name="twitter"
+                :color="hovered === 'twitter' ? '#1DA1F2' : 'black'"
+                size="25"
+                @mouseenter="hovered = 'twitter'"
+                @mouseleave="hovered = ''"
+              />
+            </span>
           </div>
         </div>
+        <br />
+        <br />
       </div>
     </div>
   </section>
@@ -111,6 +155,12 @@ export default {
     IconBrandGithub,
     IconBrandLinkedin,
     IconBrandTwitter,
+  },
+
+  data() {
+    return {
+      hovered: "",
+    };
   },
 };
 </script>

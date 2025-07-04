@@ -1,27 +1,40 @@
 <template>
-  <div class="w-screen">
-    <Navbar :sections="sections" />
-    <div class="flex flex-col flex-1">
-      <Intro />
-      <AboutMe />
-    </div>
+  <Navbar :sections="sections" />
+
+  <div>
+    <Intro />
+    <AboutMe />
+    <Portofolio />
+    <!-- <Testimonials /> -->
+    <Contact />
   </div>
+
+  <Footer />
 </template>
 
 <script>
-import MainContent from "./components/MainContent.vue";
 import Navbar from "./components/Navbar.vue";
 import Intro from "./components/Intro.vue";
 import AboutMe from "./components/AboutMe.vue";
+import Portofolio from "./components/Portofolio.vue";
+import Testimonials from "./components/Testimonials.vue";
+import Contact from "./components/Contact.vue";
+import Footer from "./components/Footer.vue";
 import { ref } from "vue";
 
 export default {
-  components: { Navbar, MainContent, Intro, AboutMe },
+  components: {
+    Navbar,
+    Intro,
+    AboutMe,
+    Portofolio,
+    Testimonials,
+    Contact,
+    Footer,
+  },
   setup() {
     const sections = ref(["Home", "About", "Projects", "Contact"]);
     const currentSection = ref("Home");
-
-    console.log(sections, currentSection);
 
     return { sections, currentSection };
   },

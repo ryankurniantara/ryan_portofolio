@@ -10,11 +10,20 @@
   width: 100%;
 }
 
+/* Tambahan global CSS, taruh di App.vue atau global.css */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
 @font-face {
   font-family: "Poppins";
   src: url("fonts/Poppins-Regular.ttf") format("ttf");
-  font-weight: normal;
-  font-style: normal;
 }
 
 @layer utilities {
@@ -29,6 +38,7 @@
     -webkit-text-fill-color: transparent;
   }
 }
+
 /* a,
 .green {
   text-decoration: none;

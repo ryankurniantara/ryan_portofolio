@@ -1,12 +1,10 @@
 <template>
   <nav
-    class="text-black text-center shadow-md sticky top-0 w-full bg-white z-50 font-poppins"
+    class="text-black text-center shadow-md sticky md:sticky md:top-0 top-0 bg-white z-50 font-poppins py-6 md:py-0 px-10 md:px-12 lg:px-20 xl:px-32"
   >
-    <div
-      class="flex items-center justify-between md:justify-center w-screen mx-auto py-6 md:py-0 px-10 md:px-12 lg:px-20 xl:px-32"
-    >
+    <div class="flex items-center justify-between md:justify-center">
       <!-- Logo (Mobile Only) -->
-      <div class="text-gray-700 md:hidden">RK.</div>
+      <div class="text-gray-700 md:hidden"></div>
 
       <!-- Desktop Menu (Centered) -->
       <ul class="hidden md:flex text-base tracking-[0.2em]">
@@ -19,7 +17,7 @@
             href="#"
             class="text-gray-700 hover:text-blue-500 transition px-2 sm:px-4 md:px-6 lg:px-8 xl:px-20"
           >
-            {{ section.toUpperCase() }}
+            {{ section.toUpperCase() }} 
           </a>
         </li>
       </ul>
@@ -46,7 +44,7 @@
   <!-- Overlay -->
   <div
     v-if="isOpen"
-    class="fixed inset-0 bg-black bg-opacity-50 z-50 transition-opacity"
+    class="fixed inset-0 bg-opacity-50 z-50 transition-opacity"
     @click="isOpen = false"
   ></div>
 
@@ -64,7 +62,7 @@
         <li v-for="(section, index) in sections" :key="index" class="mb-2">
           <button
             @click="isOpen = false"
-            class="block w-full text-left p-3 hover:bg-gray-700 transition text-black"
+            class="block text-left p-3 hover:bg-gray-700 transition text-black"
           >
             {{ section }}
           </button>
