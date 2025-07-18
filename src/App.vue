@@ -1,13 +1,11 @@
 <template>
   <Navbar :sections="sections" />
 
-  <div>
-    <Intro />
-    <AboutMe />
-    <Portofolio />
-    <!-- <Testimonials /> -->
-    <Contact />
-  </div>
+  <Intro />
+  <AboutMe />
+  <Portofolio />
+  <Testimonials />
+  <Contact />
 
   <Footer />
 </template>
@@ -47,4 +45,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style></style>
