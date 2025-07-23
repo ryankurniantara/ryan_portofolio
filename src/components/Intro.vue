@@ -1,40 +1,42 @@
 <template>
   <section
-    class="relative w-screen min-h-screen flex flex-col items-center justify-center mx-auto p-12 md:px-16 overflow-hidden bg-subtle"
+    id="home"
+    class="relative w-screen min-h-full flex flex-col items-center justify-center mx-auto p-12 md:px-16 overflow-hidden"
   >
+    <!-- Background Lingkaran -->
     <div
-      class="absolute flex items-center justify-center -right-10 top-80 -translate-y-1/2 z-10 md:overflow-visible overflow-hidden"
+      class="absolute flex items-center justify-center -right-10 top-80 -translate-y-1/2 z-0 pointer-events-none overflow-hidden"
     >
       <div
-        class="absolute w-[200px] h-[200px] border-[0.5px] border-gray-300 rounded-full opacity-75"
+        class="absolute w-[200px] h-[200px] border border-gray-300 rounded-full opacity-75"
       ></div>
       <div
-        class="absolute w-[400px] h-[400px] border-[0.5px] border-gray-300 rounded-full opacity-75"
+        class="absolute w-[400px] h-[400px] border border-gray-300 rounded-full opacity-75"
       ></div>
       <div
-        class="absolute w-[600px] h-[600px] border-[0.5px] border-gray-300 rounded-full opacity-75"
+        class="absolute w-[600px] h-[600px] border border-gray-300 rounded-full opacity-75"
       ></div>
       <div
-        class="absolute w-[800px] h-[800px] border-[0.5px] border-gray-300 rounded-full opacity-75"
+        class="absolute w-[800px] h-[800px] border border-gray-300 rounded-full opacity-75"
       ></div>
       <div
-        class="absolute w-[1000px] h-[1000px] border-[0.5px] border-gray-300 rounded-full opacity-50"
+        class="absolute w-[1000px] h-[1000px] border border-gray-300 rounded-full opacity-50"
       ></div>
       <div
-        class="absolute w-[1200px] h-[1200px] border-[0.5px] border-gray-300 rounded-full"
+        class="absolute w-[1200px] h-[1200px] border border-gray-300 rounded-full"
       ></div>
     </div>
 
-    <!-- Intro -->
+    <!-- Konten -->
     <div
-      class="flex flex-col items-center md:items-start w-full max-w-7xl justify-start text-center md:text-left z-10"
+      v-observe
+      class="flex flex-col items-center md:items-start w-full max-w-7xl justify-start text-center md:text-left z-10 opacity-0"
     >
+      <!-- Intro -->
       <div class="p-10">
-        <h4 class="text-yellow-600 font-serif tracking-[0.2em]">
-          - Hello World!
-        </h4>
+        <h4 class="text-yellow-600 tracking-[0.2em]">- Hello World!</h4>
         <div
-          class="text-gray-700 leading-tight text-5xl sm:text-6xl md:text-7xl font-['Playfair_Display']"
+          class="text-gray-700 leading-tight text-5xl sm:text-6xl md:text-7xl"
         >
           Hi, I'm
           <span class="text-gray-900 font-bold">Ryan</span>, a developer
@@ -46,94 +48,12 @@
               <span class="relative text-yellow-900 font-bold">focused</span>
             </span>
           </span>
-          on
-          <span class="text-gray-900 font-bold">mobile</span> <br />
-          and <span class="text-gray-900 font-bold">web</span> experiences.
-        </div>
-      </div>
-
-      <!-- Biography and Image -->
-
-      <div
-        class="flex flex-col md:flex-row rounded-lg shadow-lg md:bg-white items-center md:p-10 p-0"
-      >
-        <img
-          src="../assets/images/my-cartoon.png"
-          alt="ProfileReal"
-          class="rounded-full md:w-60 md:h-60 w-[200px] h-[200px] size-24 bg-black object-cover object-[center_10%] mt-10"
-        />
-
-        <div
-          class="flex flex-col rounded-lg font-serif text-gray-900 md:pl-10 p-8"
-        >
-          <h1 class="text-4xl text-gray-900 font-bold">Biography</h1>
+          on <span class="text-gray-900 font-bold">mobile</span>
           <br />
-          <p class="align-text-top">
-            I am a developer focused on mobile and web experiences. I am
-            passionate about creating beautiful and functional applications that
-            provide value to users. I have experience working with a variety of
-            technologies and frameworks, including React, React Native, flutter
-            and Node.js. I am always looking to learn new things and improve my
-            skills, and I am excited about the opportunity to work on new and
-            challenging projects.
-          </p>
+          and
+          <span class="text-gray-900 font-bold">web</span>
+          experiences.
         </div>
-
-        <div class="flex flex-col p-0 md:p6">
-          <h1 class="text-2xl text-gray-900 font-sans font-bold">
-            Let's Connect
-          </h1>
-          <br />
-          <div class="flex flex-row flex-wrap gap-2">
-            <span class="group transition-transform hover:scale-125">
-              <IconBrandInstagram
-                name="instagram"
-                :color="hovered === 'instagram' ? '#E1306C' : 'black'"
-                size="25"
-                @mouseenter="hovered = 'instagram'"
-                @mouseleave="hovered = ''"
-              />
-            </span>
-            <span class="group transition-transform hover:scale-125">
-              <IconBrandFacebook
-                name="facebook"
-                :color="hovered === 'facebook' ? '#1877F3' : 'black'"
-                size="25"
-                @mouseenter="hovered = 'facebook'"
-                @mouseleave="hovered = ''"
-              />
-            </span>
-            <span class="group transition-transform hover:scale-125">
-              <IconBrandGithub
-                name="github"
-                :color="hovered === 'github' ? '#6e5494' : 'black'"
-                size="25"
-                @mouseenter="hovered = 'github'"
-                @mouseleave="hovered = ''"
-              />
-            </span>
-            <span class="group transition-transform hover:scale-125">
-              <IconBrandLinkedin
-                name="linkedin"
-                :color="hovered === 'linkedin' ? '#0A66C2' : 'black'"
-                size="25"
-                @mouseenter="hovered = 'linkedin'"
-                @mouseleave="hovered = ''"
-              />
-            </span>
-            <span class="group transition-transform hover:scale-125">
-              <IconBrandTwitter
-                name="twitter"
-                :color="hovered === 'twitter' ? '#1DA1F2' : 'black'"
-                size="25"
-                @mouseenter="hovered = 'twitter'"
-                @mouseleave="hovered = ''"
-              />
-            </span>
-          </div>
-        </div>
-        <br />
-        <br />
       </div>
     </div>
   </section>
@@ -156,11 +76,44 @@ export default {
     IconBrandLinkedin,
     IconBrandTwitter,
   },
-
   data() {
     return {
       hovered: "",
     };
   },
+  directives: {
+    observe: {
+      mounted(el) {
+        const observer = new IntersectionObserver(
+          ([entry]) => {
+            if (entry.isIntersecting) {
+              el.classList.remove("opacity-0", "animate-fade-in-up");
+              void el.offsetWidth; // force reflow
+              el.classList.add("animate-fade-in-up");
+            }
+          },
+          { threshold: 0.1 }
+        );
+        observer.observe(el);
+      },
+    },
+  },
 };
 </script>
+
+<style scoped>
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 1s ease-out both;
+}
+</style>

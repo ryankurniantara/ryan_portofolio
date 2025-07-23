@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="text-black text-center shadow-md sticky md:sticky md:top-0 top-0 bg-white z-50 font-poppins py-6 md:py-0 px-10 md:px-12 lg:px-20 xl:px-32"
+    class="text-black text-center shadow-md sticky md:sticky md:top-0 top-0 bg-white z-50 py-6 md:py-0 px-10 md:px-12 lg:px-20 xl:px-32"
   >
     <div class="flex items-center justify-between md:justify-center">
       <!-- Logo (Mobile Only) -->
@@ -14,10 +14,10 @@
           class="border-b-2 border-transparent hover:border-b-blue-500 transition duration-300 py-6"
         >
           <a
-            href="#"
+            :href="`#${section.toLowerCase()}`"
             class="text-gray-700 hover:text-blue-500 transition px-2 sm:px-4 md:px-6 lg:px-8 xl:px-20"
           >
-            {{ section.toUpperCase() }} 
+            {{ section.toUpperCase() }}
           </a>
         </li>
       </ul>
@@ -56,16 +56,22 @@
     >
       <div class="p-6 flex justify-between items-center">
         <span class="text-lg font-semibold">Menu</span>
-        <button @click="isOpen = false" class="focus:outline-none">✖</button>
+        <button
+          @click="isOpen = false"
+          class="focus:outline-none text-black text-2xl"
+        >
+          ✖
+        </button>
       </div>
       <ul class="flex flex-col p-4">
         <li v-for="(section, index) in sections" :key="index" class="mb-2">
-          <button
+          <a
+            :href="`#${section.toLowerCase()}`"
             @click="isOpen = false"
-            class="block text-left p-3 hover:bg-gray-700 transition text-black"
+            class="block text-left p-3 hover:bg-gray-300 transition text-black text-lg"
           >
             {{ section }}
-          </button>
+          </a>
         </li>
       </ul>
     </aside>
@@ -76,7 +82,7 @@
 import { ref } from "vue";
 
 const isOpen = ref(false);
-const sections = ref(["RK.", "Home", "Projects", "About", "Contact"]);
+const sections = ref(["RK.", "HOME", "PROJECTS", "ABOUT", "CONTACT"]);
 
 sections.value.shift();
 </script>

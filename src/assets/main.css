@@ -8,6 +8,8 @@
   padding: 0 auto;
   font-weight: normal;
   width: 100%;
+  background-color: #f9f5f0;
+  font-family: "Playfair";
 }
 
 /* Tambahan global CSS, taruh di App.vue atau global.css */
@@ -19,18 +21,25 @@
 
 body {
   overflow-x: hidden;
+  font-family: "Playfair";
 }
 
 @font-face {
-  font-family: "Poppins";
-  src: url("fonts/Poppins-Regular.ttf") format("ttf");
+  font-family: "PlayfairDisplay";
+  font-style: normal;
+  font-weight: 100 900;
+  src: url("fonts/PlayfairDisplay-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "PlayfairDisplay";
+  font-style: italic;
+  font-weight: 100 900;
+  src: url("fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf")
+    format("truetype");
 }
 
 @layer utilities {
-  .bg-subtle {
-    background: linear-gradient(to right, #ffffff, #f8f9fa);
-  }
-
   .text-gradient {
     background: linear-gradient(90deg, #1e293b, #000);
     background-clip: text;

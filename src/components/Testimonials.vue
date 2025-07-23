@@ -5,9 +5,7 @@
     <div
       class="w-full px-4 text-center items-center justify-center flex flex-col"
     >
-      <h2
-        class="font-bold font-poppins text-gray-900 mb-2 text-4xl md:text-5xl"
-      >
+      <h2 class="font-bold text-gray-900 mb-2 text-4xl md:text-5xl">
         Testimonials
       </h2>
       <p

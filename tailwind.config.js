@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 export default {
   moede : "jit",
   content: [
@@ -8,12 +10,12 @@ export default {
   
   theme: {
     extend: {
-      fontFamily: {
-        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        poppins: ['Poppins', 'sans-serif'], // Tambahkan font baru
+      fontFamily: { 
+       sans: ['Playfair', ...defaultTheme.fontFamily.sans],
       },
     },
   },
   plugins: [],
 }
+
 

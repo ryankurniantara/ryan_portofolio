@@ -2,11 +2,9 @@
   <Navbar :sections="sections" />
 
   <Intro />
-  <AboutMe />
+  <About />
   <Portofolio />
-  <Testimonials />
   <Contact />
-
   <Footer />
 </template>
 
@@ -14,6 +12,7 @@
 import Navbar from "./components/Navbar.vue";
 import Intro from "./components/Intro.vue";
 import AboutMe from "./components/AboutMe.vue";
+import About from "./components/About.vue";
 import Portofolio from "./components/Portofolio.vue";
 import Testimonials from "./components/Testimonials.vue";
 import Contact from "./components/Contact.vue";
@@ -25,6 +24,7 @@ export default {
     Navbar,
     Intro,
     AboutMe,
+    About,
     Portofolio,
     Testimonials,
     Contact,

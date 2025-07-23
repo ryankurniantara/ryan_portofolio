@@ -1,6 +1,6 @@
 <template>
   <footer
-    class="w-full bg-gray-900 text-white py-4 flex justify-center items-center"
+    class="w-full [background-color:#2B2D42] text-white py-4 flex justify-center items-center"
   >
     <div class="flex flex-col items-center">
       <p class="text-sm">© 2025 Ryan Kurniantara. All rights reserved.</p>
