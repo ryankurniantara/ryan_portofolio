@@ -1,11 +1,11 @@
 <template>
   <section
     id="home"
-    class="relative w-screen min-h-full flex flex-col items-center justify-center mx-auto p-12 md:px-16 overflow-hidden"
+    class="relative min-h-full flex flex-col items-center justify-center mx-auto p-12 md:px-16 overflow-hidden"
   >
     <!-- Background Lingkaran -->
     <div
-      class="absolute flex items-center justify-center -right-10 top-80 -translate-y-1/2 z-0 pointer-events-none overflow-hidden"
+      class="absolute flex items-center justify-center -right-10 top-80 -translate-y-1/2 z-0 pointer-events-none"
     >
       <div
         class="absolute w-[200px] h-[200px] border border-gray-300 rounded-full opacity-75"

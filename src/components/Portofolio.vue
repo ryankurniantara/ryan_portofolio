@@ -95,14 +95,14 @@
 
       <template #content>
         <div class="text-lg">
-          <span class="text-lg font-bold">Description:</span>
+          <p class="text-lg font-bold">Description:</p>
           <span class="text-lg">{{ selectedProject.description }}</span>
         </div>
       </template>
 
       <template #techStack>
         <div class="flex gap-2 flex-wrap">
-          <span class="text-lg font-bold">Tech Stack:</span>
+          <p class="text-lg font-bold">Tech Stack:</p>
           <span class="text-lg">
             {{ selectedProject.tech_stack || "Not specified" }}
           </span>
@@ -113,7 +113,7 @@
         <span class="text-lg font-bold whitespace-nowrap"
           >Job Description:</span
         >
-        <span>
+        <ul class="list-disc pl-5">
           <li
             class="text-lg"
             v-for="(line, i) in selectedProject.job_description"
@@ -121,19 +121,19 @@
           >
             {{ line }}
           </li>
-        </span>
+        </ul>
       </template>
 
       <br />
 
-      <div class="flex flex-wrap gap-3">
+      <div class="columns-2 sm:columns-2 md:columns-3 gap-2 space-y-2">
         <img
           v-for="(img, index) in selectedProject.image"
           :key="index"
           :src="img"
           alt="Project Image"
           @click="openPreview(img)"
-          class="w-[160px] md:w-[350px] h-full rounded-lg object-cover mb-4"
+          class="break-inside-avoid rounded-lg shadow"
         />
       </div>
     </Modal>
@@ -187,9 +187,9 @@ import { IconCaretLeftFilled, IconCaretRightFilled } from "@tabler/icons-vue";
 import Modal from "@/components/modal/modall.vue";
 
 import gofeeBanner from "@/assets/images/Gofee_Banner.jpg";
-import gofee1 from "@/assets/images/Gofee.png";
-import gofee2 from "@/assets/images/Gofee_2.png";
-import gofee3 from "@/assets/images/Gofee_3.png";
+import gofee1 from "@/assets/images/Gofee1.png";
+import gofee2 from "@/assets/images/Gofee2.png";
+import gofee3 from "@/assets/images/Gofee3.png";
 
 import oneAppsWeb from "@/assets/images/oneApps_Web.jpg";
 import oneAppsWeb2 from "@/assets/images/oneApps_Web2.jpg";
@@ -212,6 +212,7 @@ import varashApps2 from "@/assets/images/VarashApps1.jpg";
 import varashApps3 from "@/assets/images/VarashApps2.jpg";
 import varashApps4 from "@/assets/images/VarashApps3.jpg";
 import varashApps5 from "@/assets/images/VarashApps5.jpg";
+import varashApps6 from "@/assets/images/VarashApps6.jpg";
 
 import gaposAppsBanner from "@/assets/images/GaposApps1.jpg";
 import gaposApps from "@/assets/images/gapos_apps.webp";
@@ -292,7 +293,14 @@ export default {
         name: "Varash Apps",
         description:
           "Apps for member to see their sales and marketing performance only for Varash Member",
-        image: [varashApps, varashApps2, varashApps3, varashApps4, varashApps5],
+        image: [
+          varashApps,
+          varashApps2,
+          varashApps3,
+          varashApps4,
+          varashApps5,
+          varashApps6,
+        ],
         tech_stack: "Flutter",
         job_description: [
           "Built a user-friendly interface for monitoring sales performance.",

@@ -1,43 +1,48 @@
 <template>
   <nav
-    class="text-black text-center shadow-md sticky md:sticky md:top-0 top-0 bg-white z-50 py-6 md:py-0 px-10 md:px-12 lg:px-20 xl:px-32"
+    class="text-black text-center shadow-md sticky md:sticky md:top-0 top-0 bg-white z-50 py-2 md:py-0 px-6 md:px-12 lg:px-20 xl:px-32"
   >
-    <div class="flex items-center justify-between md:justify-center">
-      <!-- Logo (Mobile Only) -->
-      <div class="text-gray-700 md:hidden"></div>
+    <div class="flex items-center justify-between md:justify-evenly">
+      <img
+        src="@/assets/images/LogoRk.png"
+        alt="Logo"
+        class="size-16 md:visible"
+      />
 
-      <!-- Desktop Menu (Centered) -->
-      <ul class="hidden md:flex text-base tracking-[0.2em]">
-        <li
-          v-for="(section, index) in sections"
-          :key="index"
-          class="border-b-2 border-transparent hover:border-b-blue-500 transition duration-300 py-6"
-        >
-          <a
-            :href="`#${section.toLowerCase()}`"
-            class="text-gray-700 hover:text-blue-500 transition px-2 sm:px-4 md:px-6 lg:px-8 xl:px-20"
+      <div class="flex items-center justify-between md:justify-evenly">
+        <!-- Desktop Menu (Centered) -->
+        <ul class="hidden md:flex text-base tracking-[0.2em]">
+          <li
+            v-for="(section, index) in sections"
+            :key="index"
+            class="border-b-2 border-transparent hover:border-b-blue-500 transition duration-300 py-7"
           >
-            {{ section.toUpperCase() }}
-          </a>
-        </li>
-      </ul>
+            <a
+              :href="`#${section.toLowerCase()}`"
+              class="text-gray-700 hover:text-blue-500 transition px-2 sm:px-4 md:px-6 lg:px-8 xl:px-20"
+            >
+              {{ section.toUpperCase() }}
+            </a>
+          </li>
+        </ul>
 
-      <!-- Mobile Menu Button -->
-      <button @click="isOpen = true" class="md:hidden focus:outline-none">
-        <svg
-          class="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h16m-7 6h7"
-          ></path>
-        </svg>
-      </button>
+        <!-- Mobile Menu Button -->
+        <button @click="isOpen = true" class="md:hidden focus:outline-none">
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            ></path>
+          </svg>
+        </button>
+      </div>
     </div>
   </nav>
 
